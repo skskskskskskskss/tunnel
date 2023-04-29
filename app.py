@@ -3,7 +3,7 @@ from select import select
 
 CC_PORT = 8881
 SERVICE_PORT = 8880
-LISTEN_IP='x.x.x.x'
+LISTEN_IP='127.0.0.1'
 
 sock_cc = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock_cc.bind((LISTEN_IP,CC_PORT))
