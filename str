@@ -1,0 +1,61 @@
+import os
+from time import sleep  
+
+os.system("pip3.8 install -U telethon")
+os.system("pip3.8 install --upgrade telethon")
+
+import telethon 
+from telethon.errors.drpcerrorlist import ApiIdInvalidError, PhoneNumberInvalidError
+from telethon.sessions import StringSession
+from telethon.sync import TelegramClient
+
+a = """
+Ftvpn Userbot
+
+ The Safest Userbot
+
+"""
+x = "Get your API_ID, API_HASH get from my.telegram.org\n\n"
+
+def spinner():
+    print("Checking Setup Telethon...")
+    for _ in range(3):
+        for frame in r"-\|/-\|/":
+            print("\b", frame, sep="", end="", flush=True)
+            sleep(0.1)
+        
+os.system("clear")
+ 
+print(a)
+print(x)
+
+try:
+    API_ID = int(input("Please enter your API ID: \n"))
+    API_HASH = input("Please enter your API HASH: \n")
+
+except ValueError:
+    print('Wrong combnation of API_ID, HASH')
+    exit(0)
+try:
+        with TelegramClient(StringSession(), API_ID, API_HASH) as eviral:
+            print("Generating a session For AyiinXd")
+            bby = eviral.send_message(
+                "me",
+                f"Ftvpn String¨:\n\n`{eviral.session.save()}`\n\n**Do not share this anywhere!**",
+            )
+            bby.reply("The Above is the your `STRING_SESSION`ðŸ¤— FOR your AyiinXd\n\n__Thanks For Using AyiinStringâ¤ï¸__\n\nâ€¢Join Group Chat our Channels ~ @AyiinXdSupport / @AyiinSupport")
+            print(
+                "Your SESSION has been generated. Check your telegram saved messages!"
+            )
+            exit(0)
+except ApiIdInvalidError:
+        print(
+            "Your API ID/API HASH combination is invalid. Kindly recheck.\nQuitting..."
+        )
+        exit(0)
+except ValueError:
+        print("API HASH must not be empty!\nQuitting...")
+        exit(0)
+except PhoneNumberInvalidError:
+        print("The phone number is invalid!\nQuitting...")
+        exit(0)
